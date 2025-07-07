@@ -5,7 +5,6 @@ title: "获取表格"
 当您使用智能文档解析API想要获取表格时，您可以参考以下示例代码，将表格保存为 md 和 json 文件。
 
 - 在 options 中设置参数 table_flavor 为 md 或 html，这样API会以Markdown或HTML格式输出表格。
-- 如果您想了解更多详细信息，可以在[API文档](https://www.textin.com/document/pdf_to_markdown)中查看。
 
 ```python
 if "result" in json_response and "markdown" in json_response["result"]:
@@ -47,3 +46,5 @@ if "result" in json_response and "excel_base64" in json_response["result"]:
 else:
     print("未检测到 excel_base64 字段，可能 PDF 中没有表格或参数设置有误。")
 ```
+
+- 如果您想了解更多详细信息，可以在[API文档](https://www.textin.com/document/pdf_to_markdown)中查看。
