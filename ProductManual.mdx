@@ -1,111 +1,47 @@
 ---
 title: "使用手册"
-description: "Preview changes locally to update your docs"
+description: "快速体验感受能力效果"
 ---
 
-<Info>
-  **Prerequisite**: Please install Node.js (version 19 or higher) before proceeding. \
-  
-  Please upgrade to `docs.json` before proceeding and delete the legacy `mint.json` file.
-</Info>
+智能文档解析[功能体验](https://www.textin.com/console/recognition/robot_markdown?service=pdf_to_markdown)提供了一个在线的Web平台，您可以通过浏览器直接使用，无需编写任何代码即可快速试用我们的API并感受效果。
 
-Follow these steps to install and run Mintlify on your operating system:
+您可以点击预存的示例文档，在右侧快速查看解析结果并与原文档进行对照；也可以自行上传文档（如发票、表格或报告等），同样在右侧查看解析结果和原文档比对，可以切换查看JSON格式输出以及特定元素解析结果，同时也支持您对解析结果进行编辑、复制、导出等操作。
 
-**Step 1**: Install Mintlify:
+<Warning>
+  请注意：预存示例文档的解析是免费的，而您自行上传文档进行解析需要消耗页数额度。
+</Warning>
 
-<CodeGroup>
+![Manual 1 PN](/images/manual-1.PNG)
 
-```bash npm
-npm i -g mintlify
-```
+参数会影响文档的解析结果和JSON输出内容；在功能体验时，我们为您提供了可视化的配置选项，同时也已经为您预先配好了一些参数，您可以根据实际使用情况自定义这些参数；当参数配置保存后，您可以重新解析文档以获取最新结果。
 
+![Manual 2 PN](/images/manual-2.PNG)
 
-```bash yarn
-yarn global add mintlify
-```
+如果您想要快速接入API并集成到您的系统中，我们提供了快捷的代码生成功能，它会基于当前的参数配置生成示例代码，您可以点击按钮下载，并根据您的实际需要进行后续的编辑和应用。
 
-</CodeGroup>
+![Manual 3 Pn](/images/manual-3.png)
 
-**Step 2**: Navigate to the docs directory (where the `docs.json` file is located) and execute the following command:
+![Manual 4 Pn](/images/manual-4.png)
 
-```bash
-mintlify dev
-```
+### **智能文档抽取**
 
-A local preview of your documentation will be available at `http://localhost:3000`.
+除了文档解析外，我们还提供了文档智能抽取功能。您可以在右侧面板中切换至「智能抽取」对文档进行结构化信息提取。
 
-### Custom Ports
+**智能抽取支持2种配置模式，可以切换使用。**
 
-By default, Mintlify uses port 3000. You can customize the port Mintlify runs on by using the `--port` flag. To run Mintlify on port 3333, for instance, use this command:
+- **prompt模式**：您可以输入想提取的内容，系统会根据您的prompt要求提取相应信息，并以JSON格式输出。
+- **字段模式**：您可以自定义添加要抽取的文本字段或表格表头，系统会根据字段进行抽取；您可以直接查看字段和表头的抽取结果，也可以切换至JSON格式查看输出。文本字段和表格表头的抽取数量总计不超过100个。
 
-```bash
-mintlify dev --port 3333
-```
-
-If you attempt to run Mintlify on a port that's already in use, it will use the next available port:
-
-```md
-Port 3000 is already in use. Trying 3001 instead.
-```
-
-## Mintlify Versions
-
-Please note that each CLI release is associated with a specific version of Mintlify. If your local website doesn't align with the production version, please update the CLI:
-
-<CodeGroup>
-
-```bash npm
-npm i -g mintlify@latest
-```
-
-
-```bash yarn
-yarn global upgrade mintlify
-```
-
-</CodeGroup>
-
-## Validating Links
-
-The CLI can assist with validating reference links made in your documentation. To identify any broken links, use the following command:
-
-```bash
-mintlify broken-links
-```
-
-## Deployment
+<Warning>
+  请注意：智能文档抽取在API中支持最大不超过100页的文档，超出部分的文档信息将被忽略；而在功能体验时，为了让您能够更快速的感受效果，支持最大不超过20页的文档。
+</Warning>
 
 <Tip>
-  Unlimited editors available under the [Pro
-  Plan](https://mintlify.com/pricing) and above.
+  [智能文档抽取](https://www.textin.com/document/open_kie_vlm_engine)与[智能文档解析](https://www.textin.com/document/pdf_to_markdown)是独立的2个API，您可以根据您自身业务和应用需求，选择合适的API。
 </Tip>
 
-If the deployment is successful, you should see the following:
+![Manual 5 Pn](/images/manual-5.png)
 
-<Frame>
-  <img
-    src="/images/checks-passed.png"
-    style={{ borderRadius:"0.5rem" }}
-  />
-</Frame>
+功能体验旨在帮助您快速了解智能文档解析API可以做什么，以及使用您自行上传的文档感受效果。它往往不直接应用于大范围生产，更适合小规模的测试和体验。
 
-## Code Formatting
-
-We suggest using extensions on your IDE to recognize and format MDX. If you're a VSCode user, consider the [MDX VSCode extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for syntax highlighting, and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for code formatting.
-
-## Troubleshooting
-
-<AccordionGroup>
-  <Accordion title='Error: Could not load the "sharp" module using the darwin-arm64 runtime'>
-    This may be due to an outdated version of node. Try the following:
-
-    1. Remove the currently-installed version of mintlify: `npm remove -g mintlify`
-    2. Upgrade to Node v19 or higher.
-    3. Reinstall mintlify: `npm install -g mintlify`
-  </Accordion>
-  <Accordion title="Issue: Encountering an unknown error">
-    Solution: Go to the root of your device and delete the ~/.mintlify folder. Afterwards, run `mintlify dev` again.
-  </Accordion>
-</AccordionGroup>
-
-Curious about what changed in the CLI version? [Check out the CLI changelog.](https://www.npmjs.com/package/mintlify?activeTab=versions)
+要全面的解析文档或对文档做提取转换处理，以及集成到您的系统中，请使用我们的[智能文档解析](https://www.textin.com/document/pdf_to_markdown)和[智能文档抽取](https://www.textin.com/document/open_kie_vlm_engine)API。
