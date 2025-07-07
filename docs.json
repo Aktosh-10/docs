@@ -22,14 +22,28 @@
             ]
           },
           {
-            "group": "Essentials",
+            "group": "文档解析",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "Parse/quickstart",
+              "Parse/getmarkdown",
+              "Parse/getJSON",
+              "Parse/gettable",
+              "Parse/getcatalog",
+              "Parse/getimage",
+              "Parse/getpos",
+              "Parse/chunk",
+              "Parse/max-workers"
+            ]
+          },
+          {
+            "group": "文档抽取",
+            "pages": [
+              "Extration/quickstart",
+              "Extration/getJSON",
+              "Extration/gettable",
+              "Extration/getpos",
+              "Extration/asyncio",
+              "Extration/max-concurrent"
             ]
           }
         ]
