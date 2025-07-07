@@ -14,11 +14,11 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "产品概览",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "APIKey",
+              "ProductManual"
             ]
           },
           {
