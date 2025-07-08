@@ -3,9 +3,11 @@ title: "使用手册"
 description: "快速体验感受能力效果"
 ---
 
-智能文档解析[功能体验](https://www.textin.com/console/recognition/robot_markdown?service=pdf_to_markdown)提供了一个在线的Web平台，您可以通过浏览器直接使用，无需编写任何代码即可快速试用我们的API并感受效果。
+### 智能文档解析
 
-您可以点击预存的示例文档，在右侧快速查看解析结果并与原文档进行对照；也可以自行上传文档（如发票、表格或报告等），同样在右侧查看解析结果和原文档比对，可以切换查看JSON格式输出以及特定元素解析结果，同时也支持您对解析结果进行编辑、复制、导出等操作。
+[功能体验](https://www.textin.com/console/recognition/robot_markdown?service=pdf_to_markdown)提供了一个在线的Web平台，您可以通过浏览器直接使用，无需编写任何代码即可快速试用我们的API并感受效果。
+
+您可以点击预存的示例文档，也可以自行上传文档（如发票、表格或报告等）在右侧快速查看解析结果并与原文档进行对照；可以切换查看JSON格式输出以及特定元素解析结果，同时也支持您对解析结果进行编辑、复制、导出等操作。
 
 <Warning>
   请注意：预存示例文档的解析是免费的，而您自行上传文档进行解析需要消耗页数额度。
@@ -32,16 +34,16 @@ description: "快速体验感受能力效果"
 - **prompt模式**：您可以输入想提取的内容，系统会根据您的prompt要求提取相应信息，并以JSON格式输出。
 - **字段模式**：您可以自定义添加要抽取的文本字段或表格表头，系统会根据字段进行抽取；您可以直接查看字段和表头的抽取结果，也可以切换至JSON格式查看输出。文本字段和表格表头的抽取数量总计不超过100个。
 
+![Manual 5 Pn](/images/manual-5.png)
+
 <Warning>
   请注意：智能文档抽取在API中支持最大不超过100页的文档，超出部分的文档信息将被忽略；而在功能体验时，为了让您能够更快速的感受效果，支持最大不超过20页的文档。
 </Warning>
 
-<Tip>
-  [智能文档抽取](https://www.textin.com/document/open_kie_vlm_engine)与[智能文档解析](https://www.textin.com/document/pdf_to_markdown)是独立的2个API，您可以根据您自身业务和应用需求，选择合适的API。
-</Tip>
-
-![Manual 5 Pn](/images/manual-5.png)
-
 功能体验旨在帮助您快速了解智能文档解析API可以做什么，以及使用您自行上传的文档感受效果。它往往不直接应用于大范围生产，更适合小规模的测试和体验。
 
 要全面的解析文档或对文档做提取转换处理，以及集成到您的系统中，请使用我们的[智能文档解析](https://www.textin.com/document/pdf_to_markdown)和[智能文档抽取](https://www.textin.com/document/open_kie_vlm_engine)API。
+
+<Tip>
+  [智能文档抽取](https://www.textin.com/document/open_kie_vlm_engine)与[智能文档解析](https://www.textin.com/document/pdf_to_markdown)是独立的2个API，您可以根据您自身业务和应用需求，选择合适的API。
+</Tip>
